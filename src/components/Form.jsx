@@ -4,6 +4,8 @@ import useCurrency from '../hooks/useCurrency';
 import useCryptoCurrency from '../hooks/useCryptoCurrency';
 import axios from 'axios';
 import ErrorComponent from './ErrorComponent';
+import PropTypes from 'prop-types'
+
 
 const API_CRYPTOS_CURRENCYS = `https://min-api.cryptocompare.com/data/top/mktcapfull?limit=10&tsym=USD`;
 
@@ -94,6 +96,11 @@ function Form({ setCurrency, setCryptoCurrency }) {
 			<Button value="Search" type="submit" />
 		</form>
 	);
+}
+
+Form.propTypes = {
+	setCurrency: PropTypes.func.isRequired, 
+	setCryptoCurrency: PropTypes.func.isRequired
 }
 
 export default Form;
